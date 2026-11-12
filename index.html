@@ -22,12 +22,15 @@
 
 <section id="en">
 <h1>Lesson Schedule – Privacy Policy</h1>
-<p class="muted">App: Lesson Schedule / გაკვეთილების ცხრილი (package <code>com.ggvg.schoollessons</code>)<br>
+<p class="muted">App: Lesson Schedule / გაკვეთილების ცხრილი (Android package and iOS bundle identifier <code>com.ggvg.schoollessons</code>)<br>
 Developer: GGVG · Contact: <a href="mailto:v.gigilashvili@gmail.com">v.gigilashvili@gmail.com</a><br>
-Last updated: 11 November 2026</p>
+Last updated: 12 November 2026</p>
 
 <h2>In short</h2>
-<p>Lesson Schedule is a school timetable and homework app. It works fully without an account, and in that case everything you enter stays on your device. The app has no advertising and no analytics or tracking. If you choose to sign in with Google, a copy of your data is saved to a cloud database so you can use it on another device.</p>
+<p>Lesson Schedule is a school timetable and homework app. It works fully without an account, and in that case everything you enter stays on your device. The app has no advertising and no analytics or tracking. If you choose to sign in with Google in the Android app, a copy of your data is saved to a cloud database so you can use it on another device.</p>
+
+<h2>iPhone and iPad</h2>
+<p>The iPhone and iPad app has no sign-in and no cloud copy. It does not collect any data: everything you enter (lessons, timetable, homework notes, profile, settings and an optional profile photo) is stored only on your device and is never sent to us or to anyone else. The app contains no advertising, no analytics, no tracking and no third-party SDKs, and it does not use the advertising identifier (IDFA). The sections below that describe signing in, the cloud copy and the QR scanner apply to the Android app only.</p>
 
 <h2>What the app stores</h2>
 <table>
@@ -35,37 +38,41 @@ Last updated: 11 November 2026</p>
 <tr><td>Lessons, timetable, bell times, holidays, sick days, homework ticks and notes</td><td>On your device. Also in the cloud copy if you sign in.</td></tr>
 <tr><td>Profile: name, school name, grade, optional school links, chosen avatar or profile photo</td><td>On your device. Also in the cloud copy if you sign in.</td></tr>
 <tr><td>App settings (language, theme, reminder, sound)</td><td>On your device. Also in the cloud copy if you sign in.</td></tr>
-<tr><td>Google account identifier, name and email address</td><td>Only if you sign in. Held by Firebase Authentication to recognise your account.</td></tr>
+<tr><td>Google account identifier, name and email address</td><td>Android app only, and only if you sign in. Held by Firebase Authentication to recognise your account.</td></tr>
+<tr><td>Firebase installation identifier (a random ID created by the Firebase libraries in the app)</td><td>Android app only. Used only so that sign-in and the cloud copy can work. It is not used for advertising or tracking. The app does not use the Android advertising ID.</td></tr>
 </table>
 <p>All profile fields are optional. A nickname works just as well as a real name.</p>
 
-<h2>Sign-in and cloud copy (optional)</h2>
+<h2>Sign-in and cloud copy (optional, Android only)</h2>
 <p>If you tap “Sign in with Google”, the app uses Google's Firebase Authentication to sign you in and Cloud Firestore to store one document containing the data listed above. This document is stored in Google data centres in the European Union and can be read and changed only by the signed-in account it belongs to. It is used for one purpose: restoring and synchronising your own data between your devices. We do not use it for anything else and do not share or sell it.</p>
 <p>Google acts as our service provider for these features. See <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>.</p>
 
 <h2>Camera, photos and notifications</h2>
 <ul>
-<li><strong>Camera and photo picker</strong> are used only when you choose to set a profile photo. The photo is shrunk to a small square and stored as part of your profile. The app does not read your photo library.</li>
-<li><strong>QR scanner</strong> is used only when you choose to copy a classmate's timetable. Nothing from the camera is stored.</li>
-<li><strong>Notifications</strong> are created on your device to remind you about the next day's lessons. They are not sent from a server.</li>
+<li><strong>Camera and photo picker</strong> are used only when you choose to set a profile photo. The photo is shrunk to a small square and stored as part of your profile on your device (and in the cloud copy on Android if you sign in). The app does not read your photo library; on iPhone and iPad you pick a single photo with the system's own picker.</li>
+<li><strong>QR scanner</strong> (Android app only) is used only when you choose to copy a classmate's timetable. Nothing from the camera is stored.</li>
+<li><strong>Notifications</strong> are created on your device to remind you about the next day's lessons. They are not sent from a server. On iPhone and iPad, iOS asks for your permission first; you can change it in Settings at any time.</li>
 </ul>
 
 <h2>Sharing a timetable</h2>
-<p>The “Share timetable” screen shows a QR code containing only lesson names, lesson icons, teacher names, bell times, school days and the weekly schedule. It never contains homework, notes, your profile or your account. It leaves your device only when someone scans it from your screen.</p>
+<p>The “Share timetable” screen shows a QR code containing only lesson names, lesson icons, teacher names, bell times, school days and the weekly schedule. It never contains homework, notes, your profile or your account. It leaves your device only when someone scans it from your screen. The same information can also be sent as a link: when you tap “Send as a link”, your phone's share menu opens and the link travels only through the messaging app you choose. It is not sent to us or to any server of ours.</p>
 
 <h2>Children</h2>
-<p>The app is suitable for school pupils of all ages. It does not require an account, shows no advertising and does not track users. We recommend that a parent or guardian decides whether a child signs in, and that the sign-in uses the parent's account or a supervised child account. A parent or guardian can ask us to delete a child's cloud data at any time using the contact address above.</p>
+<p>The app is designed for pupils aged 9 and older. It does not require an account, shows no advertising, uses no analytics and does not use the advertising ID. Signing in with Google is optional, and without it no personal information leaves the device. We recommend that a parent or guardian decides whether a child signs in, and that the sign-in uses the parent's account or a supervised child account. We do not knowingly collect personal information from children under 9. The iPhone and iPad app collects no personal information from anyone. A parent or guardian can ask us to review or delete a child's cloud data at any time using the contact address above.</p>
 
 <h2 id="delete">Deleting your data</h2>
 <ul>
-<li><strong>Data on the device:</strong> uninstall the app, or clear its data in Android settings.</li>
-<li><strong>Account and cloud copy, in the app:</strong> open More → your profile → Cloud backup → “Delete account”. This removes the cloud document and the account. Data on the device is kept until you remove it.</li>
+<li><strong>Data on the device:</strong> uninstall the app (on Android you can also clear its data in settings). On iPhone and iPad, deleting the app removes everything it stored, and there is nothing else to delete because no account or cloud copy exists.</li>
+<li><strong>Account and cloud copy, in the Android app:</strong> open More → your profile → Cloud backup → “Delete account”. This removes the cloud document and the account. Data on the device is kept until you remove it.</li>
 <li><strong>Account and cloud copy, without the app:</strong> email <a href="mailto:v.gigilashvili@gmail.com?subject=Lesson%20Schedule%20-%20delete%20my%20data">v.gigilashvili@gmail.com</a> from the address you signed in with, and we will delete the account and its cloud copy within 30 days.</li>
 </ul>
 <p>Signing out stops synchronisation but does not delete the cloud copy.</p>
 
 <h2>Security</h2>
 <p>Data travels between the app and the cloud over encrypted connections, and access rules allow each signed-in user to reach only their own document.</p>
+
+<h2>Links you open</h2>
+<p>If you save a school link in your profile and tap it, it opens in your web browser. That website is run by someone else and has its own privacy policy.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes, the new version will be published on this page with a new date.</p>
@@ -75,12 +82,15 @@ Last updated: 11 November 2026</p>
 
 <section id="ka" lang="ka">
 <h1>გაკვეთილების ცხრილი – კონფიდენციალურობის პოლიტიკა</h1>
-<p class="muted">აპლიკაცია: გაკვეთილების ცხრილი / Lesson Schedule (<code>com.ggvg.schoollessons</code>)<br>
+<p class="muted">აპლიკაცია: გაკვეთილების ცხრილი / Lesson Schedule (Android-ის პაკეტი და iOS-ის bundle identifier <code>com.ggvg.schoollessons</code>)<br>
 დეველოპერი: GGVG · კონტაქტი: <a href="mailto:v.gigilashvili@gmail.com">v.gigilashvili@gmail.com</a><br>
-ბოლო განახლება: 2026 წლის 11 ნოემბერი</p>
+ბოლო განახლება: 2026 წლის 12 ნოემბერი</p>
 
 <h2>მოკლედ</h2>
-<p>„გაკვეთილების ცხრილი“ სასკოლო ცხრილისა და დავალებების აპლიკაციაა. ის სრულად მუშაობს ანგარიშის გარეშე და ამ შემთხვევაში ყველაფერი, რასაც შეიყვან, მხოლოდ შენს მოწყობილობაზე ინახება. აპლიკაციაში არ არის რეკლამა, ანალიტიკა ან თვალთვალი. თუ Google-ით შესვლას აირჩევ, შენი მონაცემების ასლი ღრუბლოვან ბაზაში შეინახება, რომ სხვა მოწყობილობაზეც გამოიყენო.</p>
+<p>„გაკვეთილების ცხრილი“ სასკოლო ცხრილისა და დავალებების აპლიკაციაა. ის სრულად მუშაობს ანგარიშის გარეშე და ამ შემთხვევაში ყველაფერი, რასაც შეიყვან, მხოლოდ შენს მოწყობილობაზე ინახება. აპლიკაციაში არ არის რეკლამა, ანალიტიკა ან თვალთვალი. თუ Android-ის აპლიკაციაში Google-ით შესვლას აირჩევ, შენი მონაცემების ასლი ღრუბლოვან ბაზაში შეინახება, რომ სხვა მოწყობილობაზეც გამოიყენო.</p>
+
+<h2>iPhone და iPad</h2>
+<p>iPhone-ისა და iPad-ის აპლიკაციაში შესვლა და ღრუბლოვანი ასლი არ არის. ის არავითარ მონაცემს არ აგროვებს: ყველაფერი, რასაც შეიყვან (საგნები, ცხრილი, დავალებების ჩანაწერები, პროფილი, პარამეტრები და სურვილისამებრ პროფილის ფოტო), მხოლოდ შენს მოწყობილობაზე ინახება და არასდროს იგზავნება ჩვენთან ან სხვასთან. აპლიკაციაში არ არის რეკლამა, ანალიტიკა, თვალთვალი და მესამე მხარის SDK-ები, და ის არ იყენებს სარეკლამო იდენტიფიკატორს (IDFA). ქვემოთ აღწერილი შესვლა, ღრუბლოვანი ასლი და QR სკანერი მხოლოდ Android-ის აპლიკაციას ეხება.</p>
 
 <h2>რას ინახავს აპლიკაცია</h2>
 <table>
@@ -88,33 +98,36 @@ Last updated: 11 November 2026</p>
 <tr><td>საგნები, ცხრილი, ზარების დრო, არდადეგები, ავადმყოფობის დღეები, დავალებების მონიშვნები და ჩანაწერები</td><td>მოწყობილობაზე. შესვლის შემთხვევაში – ღრუბლოვან ასლშიც.</td></tr>
 <tr><td>პროფილი: სახელი, სკოლის სახელი, კლასი, სკოლის ბმულები (არასავალდებულო), არჩეული ავატარი ან ფოტო</td><td>მოწყობილობაზე. შესვლის შემთხვევაში – ღრუბლოვან ასლშიც.</td></tr>
 <tr><td>პარამეტრები (ენა, თემა, შეხსენება, ხმა)</td><td>მოწყობილობაზე. შესვლის შემთხვევაში – ღრუბლოვან ასლშიც.</td></tr>
-<tr><td>Google ანგარიშის იდენტიფიკატორი, სახელი და ელფოსტა</td><td>მხოლოდ შესვლის შემთხვევაში. ინახავს Firebase Authentication ანგარიშის ამოსაცნობად.</td></tr>
+<tr><td>Google ანგარიშის იდენტიფიკატორი, სახელი და ელფოსტა</td><td>მხოლოდ Android-ის აპლიკაციაში და მხოლოდ შესვლის შემთხვევაში. ინახავს Firebase Authentication ანგარიშის ამოსაცნობად.</td></tr>
+<tr><td>Firebase-ის ინსტალაციის იდენტიფიკატორი (შემთხვევითი ID, რომელსაც აპლიკაციაში არსებული Firebase-ის ბიბლიოთეკები ქმნიან)</td><td>მხოლოდ Android-ის აპლიკაციაში. გამოიყენება მხოლოდ იმისთვის, რომ შესვლამ და ღრუბლოვანმა ასლმა იმუშაოს. არ გამოიყენება რეკლამისთვის ან თვალთვალისთვის. აპლიკაცია Android-ის სარეკლამო იდენტიფიკატორს (advertising ID) არ იყენებს.</td></tr>
 </table>
 <p>პროფილის ყველა ველი არასავალდებულოა. ნამდვილი სახელის ნაცვლად მეტსახელიც გამოდგება.</p>
 
-<h2>შესვლა და ღრუბლოვანი ასლი (არასავალდებულო)</h2>
+<h2>შესვლა და ღრუბლოვანი ასლი (არასავალდებულო, მხოლოდ Android)</h2>
 <p>თუ დააჭერ „Google-ით შესვლას“, აპლიკაცია იყენებს Google-ის Firebase Authentication-ს შესასვლელად და Cloud Firestore-ს ერთი დოკუმენტის შესანახად, რომელიც ზემოთ ჩამოთვლილ მონაცემებს შეიცავს. დოკუმენტი ინახება Google-ის მონაცემთა ცენტრებში ევროკავშირში და მისი წაკითხვა და შეცვლა შეუძლია მხოლოდ იმ ანგარიშს, რომელსაც ეკუთვნის. ის ერთი მიზნით გამოიყენება: შენი მონაცემების აღდგენა და სინქრონიზაცია შენს მოწყობილობებს შორის. სხვა მიზნით არ ვიყენებთ, არავის ვუზიარებთ და არ ვყიდით.</p>
 
 <h2>კამერა, ფოტოები და შეტყობინებები</h2>
 <ul>
-<li><strong>კამერა და ფოტოს ამრჩევი</strong> გამოიყენება მხოლოდ მაშინ, როცა პროფილის ფოტოს აყენებ. ფოტო პატარა კვადრატად მცირდება და პროფილის ნაწილად ინახება. აპლიკაცია შენს ფოტოგალერეას არ კითხულობს.</li>
-<li><strong>QR სკანერი</strong> გამოიყენება მხოლოდ მაშინ, როცა თანაკლასელის ცხრილს იწერ. კამერიდან არაფერი ინახება.</li>
-<li><strong>შეტყობინებები</strong> იქმნება შენს მოწყობილობაზე ხვალინდელი გაკვეთილების შესახსენებლად. ისინი სერვერიდან არ იგზავნება.</li>
+<li><strong>კამერა და ფოტოს ამრჩევი</strong> გამოიყენება მხოლოდ მაშინ, როცა პროფილის ფოტოს აყენებ. ფოტო პატარა კვადრატად მცირდება და პროფილის ნაწილად ინახება შენს მოწყობილობაზე (Android-ზე, შესვლის შემთხვევაში, ღრუბლოვან ასლშიც). აპლიკაცია შენს ფოტოგალერეას არ კითხულობს; iPhone-სა და iPad-ზე ერთ ფოტოს სისტემის საკუთარი ამრჩევით ირჩევ.</li>
+<li><strong>QR სკანერი</strong> (მხოლოდ Android-ის აპლიკაციაში) გამოიყენება მხოლოდ მაშინ, როცა თანაკლასელის ცხრილს იწერ. კამერიდან არაფერი ინახება.</li>
+<li><strong>შეტყობინებები</strong> იქმნება შენს მოწყობილობაზე ხვალინდელი გაკვეთილების შესახსენებლად. ისინი სერვერიდან არ იგზავნება. iPhone-სა და iPad-ზე iOS ჯერ შენს ნებართვას გკითხავს; მისი შეცვლა ნებისმიერ დროს შეგიძლია პარამეტრებში.</li>
 </ul>
 
 <h2>ცხრილის გაზიარება</h2>
-<p>„ცხრილის გაზიარების“ ეკრანზე ნაჩვენები QR კოდი შეიცავს მხოლოდ საგნების სახელებს, ხატულებს, მასწავლებლების სახელებს, ზარების დროს, სასწავლო დღეებსა და კვირის ცხრილს. ის არასდროს შეიცავს დავალებებს, ჩანაწერებს, პროფილს ან ანგარიშს.</p>
+<p>„ცხრილის გაზიარების“ ეკრანზე ნაჩვენები QR კოდი შეიცავს მხოლოდ საგნების სახელებს, ხატულებს, მასწავლებლების სახელებს, ზარების დროს, სასწავლო დღეებსა და კვირის ცხრილს. ის არასდროს შეიცავს დავალებებს, ჩანაწერებს, პროფილს ან ანგარიშს. იგივე ინფორმაცია შეიძლება ბმულადაც გაიგზავნოს: როცა „ბმულის გაგზავნას“ დააჭერ, იხსნება ტელეფონის გაზიარების მენიუ და ბმული მხოლოდ შენ მიერ არჩეული აპლიკაციით იგზავნება. ის ჩვენთან ან ჩვენს სერვერზე არ იგზავნება.</p>
 
 <h2>ბავშვები</h2>
-<p>აპლიკაცია ნებისმიერი ასაკის მოსწავლისთვისაა. ის არ მოითხოვს ანგარიშს, არ აჩვენებს რეკლამას და არ უთვალთვალებს მომხმარებელს. გირჩევთ, ბავშვის შესვლაზე გადაწყვეტილება მშობელმა ან მეურვემ მიიღოს და გამოიყენოს მშობლის ან ზედამხედველობის ქვეშ მყოფი ბავშვის ანგარიში. მშობელს ან მეურვეს ნებისმიერ დროს შეუძლია მოგვთხოვოს ბავშვის ღრუბლოვანი მონაცემების წაშლა ზემოთ მითითებულ მისამართზე.</p>
+<p>აპლიკაცია 9 წლის და უფროსი ასაკის მოსწავლეებისთვისაა განკუთვნილი. ის არ მოითხოვს ანგარიშს, არ აჩვენებს რეკლამას, არ იყენებს ანალიტიკას და სარეკლამო იდენტიფიკატორს (advertising ID). Google-ით შესვლა არასავალდებულოა და მის გარეშე პირადი ინფორმაცია მოწყობილობას არ ტოვებს. გირჩევთ, ბავშვის შესვლაზე გადაწყვეტილება მშობელმა ან მეურვემ მიიღოს და გამოიყენოს მშობლის ან ზედამხედველობის ქვეშ მყოფი ბავშვის ანგარიში. 9 წელზე უმცროსი ბავშვებისგან პირად ინფორმაციას შეგნებულად არ ვაგროვებთ. iPhone-სა და iPad-ის აპლიკაცია არავისგან აგროვებს პირად ინფორმაციას. მშობელს ან მეურვეს ნებისმიერ დროს შეუძლია მოგვთხოვოს ბავშვის ღრუბლოვანი მონაცემების ნახვა ან წაშლა ზემოთ მითითებულ მისამართზე.</p>
 
 <h2>მონაცემების წაშლა</h2>
 <ul>
-<li><strong>მოწყობილობაზე:</strong> წაშალე აპლიკაცია ან გაასუფთავე მისი მონაცემები Android-ის პარამეტრებში.</li>
-<li><strong>ანგარიში და ღრუბლოვანი ასლი, აპლიკაციიდან:</strong> მეტი → პროფილი → ღრუბელში შენახვა → „ანგარიშის წაშლა“.</li>
+<li><strong>მოწყობილობაზე:</strong> წაშალე აპლიკაცია (Android-ზე მისი მონაცემების გასუფთავებაც შეგიძლია პარამეტრებში). iPhone-სა და iPad-ზე აპლიკაციის წაშლა ყველაფერს შლის, რაც მან შეინახა, და სხვა წასაშლელი არაფერია, რადგან ანგარიში და ღრუბლოვანი ასლი არ არსებობს.</li>
+<li><strong>ანგარიში და ღრუბლოვანი ასლი, Android-ის აპლიკაციიდან:</strong> მეტი → პროფილი → ღრუბელში შენახვა → „ანგარიშის წაშლა“.</li>
 <li><strong>აპლიკაციის გარეშე:</strong> მოგვწერე <a href="mailto:v.gigilashvili@gmail.com">v.gigilashvili@gmail.com</a>-ზე იმ მისამართიდან, რომლითაც შეხვედი, და ანგარიშსა და მის ღრუბლოვან ასლს 30 დღის განმავლობაში წავშლით.</li>
 </ul>
 <p>ანგარიშიდან გასვლა აჩერებს სინქრონიზაციას, მაგრამ ღრუბლოვან ასლს არ შლის.</p>
+<h2>ბმულები, რომლებსაც ხსნი</h2>
+<p>თუ პროფილში სკოლის ბმულს შეინახავ და დააჭერ, ის ბრაუზერში იხსნება. ეს ვებგვერდი სხვას ეკუთვნის და თავისი კონფიდენციალურობის პოლიტიკა აქვს.</p>
 </section>
 
 </body>
