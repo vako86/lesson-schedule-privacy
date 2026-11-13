@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lesson Schedule – open timetable</title>
+<!--
+  Opens a shared timetable in the Lesson Schedule app.
+  Link format: https://vako86.github.io/lesson-schedule-privacy/open/#t=<timetable>
+  The timetable is after '#', so it never reaches any server: this page reads it in the browser
+  and hands it to the app (ggvg-lessons://import?t=...). No scripts, fonts or trackers are loaded.
+-->
+<style>
+  :root { color-scheme: light dark; --bg:#fffbf3; --fg:#1c1b22; --muted:#5f5b6b; --accent:#5b54e6; --card:#f2eefb; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#16151c; --fg:#f3f1f8; --muted:#b7b2c6; --accent:#8d87ff; --card:#24222e; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:17px/1.5 -apple-system, system-ui, "Segoe UI", Roboto, sans-serif; }
+  main { max-width:520px; margin:0 auto; padding:40px 16px; text-align:center; }
+  .icon { font-size:64px; }
+  h1 { font-size:26px; margin:8px 0 4px; }
+  p { color:var(--muted); margin:8px 0; }
+  .open { display:block; margin:24px 0 12px; padding:16px; border-radius:999px; background:var(--accent); color:#fff; font-weight:700; font-size:19px; text-decoration:none; }
+  .card { background:var(--card); border-radius:20px; padding:16px; margin-top:24px; }
+  .stores a { display:inline-block; margin:6px 8px; color:var(--accent); font-weight:600; }
+  [hidden] { display:none !important; }
+</style>
+</head>
+<body>
+<main>
+  <div class="icon">📅</div>
+  <h1 data-en="A classmate shared a timetable" data-ka="თანაკლასელმა ცხრილი გაგიზიარა">A classmate shared a timetable</h1>
+  <p id="hint" data-en="Tap the button to copy it into the Lesson Schedule app." data-ka="დააჭირე ღილაკს და ცხრილი „გაკვეთილების ცხრილში“ გადაიწერება.">Tap the button to copy it into the Lesson Schedule app.</p>
+  <a id="open" class="open" href="#" data-en="Open in Lesson Schedule" data-ka="გახსნა აპში">Open in Lesson Schedule</a>
+  <p id="broken" hidden data-en="This link is incomplete. Ask your classmate to send it again." data-ka="ბმული არასრულია. სთხოვე თანაკლასელს, თავიდან გამოგიგზავნოს.">This link is incomplete. Ask your classmate to send it again.</p>
+  <div class="card">
+    <p data-en="Don't have the app yet? Install it, then tap the link again." data-ka="აპი ჯერ არ გაქვს? დააინსტალირე და მერე ისევ დააჭირე ბმულს.">Don't have the app yet? Install it, then tap the link again.</p>
+    <div class="stores">
+      <a href="https://apps.apple.com/app/id6834005313">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=com.ggvg.schoollessons">Google Play</a>
+    </div>
+  </div>
+</main>
+<script>
+  (function () {
+    var ka = (navigator.language || "").toLowerCase().indexOf("ka") === 0;
+    if (ka) {
+      document.documentElement.lang = "ka";
+      document.querySelectorAll("[data-ka]").forEach(function (el) { el.textContent = el.getAttribute("data-ka"); });
+    }
+    var match = /[#&]t=([A-Za-z0-9_=-]+)/.exec(location.hash);
+    var button = document.getElementById("open");
+    if (!match) {
+      button.hidden = true;
+      document.getElementById("hint").hidden = true;
+      document.getElementById("broken").hidden = false;
+      return;
+    }
+    var token = match[1];
+    var appLink = "ggvg-lessons://import?t=" + token;
+    var android = /android/i.test(navigator.userAgent);
+    // Chrome on Android opens other apps through intent: links; elsewhere the app's own scheme works.
+    button.href = android
+      ? "intent://import?t=" + token + "#Intent;scheme=ggvg-lessons;package=com.ggvg.schoollessons;end"
+      : appLink;
+    // iPhone and iPad: try straight away (iOS asks "Open in Lesson Schedule?"); the button stays as a fallback.
+    if (!android) { setTimeout(function () { location.href = appLink; }, 300); }
+  })();
+</script>
+</body>
+</html>
