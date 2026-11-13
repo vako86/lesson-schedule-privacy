@@ -32,6 +32,7 @@
   <p id="hint" data-en="Tap the button to copy it into the Lesson Schedule app." data-ka="დააჭირე ღილაკს და ცხრილი „გაკვეთილების ცხრილში“ გადაიწერება.">Tap the button to copy it into the Lesson Schedule app.</p>
   <a id="open" class="open" href="#" data-en="Open in Lesson Schedule" data-ka="გახსნა აპში">Open in Lesson Schedule</a>
   <p id="broken" hidden data-en="This link is incomplete. Ask your classmate to send it again." data-ka="ბმული არასრულია. სთხოვე თანაკლასელს, თავიდან გამოგიგზავნოს.">This link is incomplete. Ask your classmate to send it again.</p>
+  <p id="seen" hidden style="font-size:12px;word-break:break-all;opacity:.7"></p>
   <div class="card">
     <p data-en="Don't have the app yet? Install it, then tap the link again." data-ka="აპი ჯერ არ გაქვს? დააინსტალირე და მერე ისევ დააჭირე ბმულს.">Don't have the app yet? Install it, then tap the link again.</p>
     <div class="stores">
@@ -47,12 +48,19 @@
       document.documentElement.lang = "ka";
       document.querySelectorAll("[data-ka]").forEach(function (el) { el.textContent = el.getAttribute("data-ka"); });
     }
-    var match = /[#&]t=([A-Za-z0-9_=-]+)/.exec(location.hash);
+    // Normally the timetable is after '#'. Some mail apps send links through a redirect that
+    // encodes '#' as %23 or moves it into the query, so look at the whole address.
+    var whole = location.href;
+    try { whole = decodeURIComponent(whole); } catch (e) {}
+    var match = /[#?&]t=([A-Za-z0-9_=-]{20,})/.exec(whole);
     var button = document.getElementById("open");
     if (!match) {
       button.hidden = true;
       document.getElementById("hint").hidden = true;
       document.getElementById("broken").hidden = false;
+      var seen = document.getElementById("seen");
+      seen.textContent = location.href.length > 120 ? location.href.slice(0, 120) + "…" : location.href;
+      seen.hidden = false;
       return;
     }
     var token = match[1];
